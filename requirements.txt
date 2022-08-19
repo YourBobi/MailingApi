@@ -1,0 +1,7 @@
+djangorestframework
+markdown
+django-filter
+
+Django~=4.1
+pytz~=2022.2.1
+celery
