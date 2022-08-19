@@ -42,3 +42,4 @@ git clone https://github.com/YourBobi/MailingApi.git
 6. http://127.0.0.1:8000/api/v1/mailings/<pk>/info/ - детальная статистика
 7. http://127.0.0.1:8000/api/v1/mailing/detail/<int:pk>/ - удаление и изменение рассылки
 8. http://127.0.0.1:8000/api/v1/messages/ - добавление сообщения
+

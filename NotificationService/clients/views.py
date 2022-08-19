@@ -9,6 +9,10 @@ from .models import Mailing, Client, Message
 from .serializers import MailingSerializer, ClientSerializer, MessageSerializer
 from .send_message import send_message
 
+URL = "https://probe.fbrq.cloud/v1/send/"
+TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIzNjc3MDksImlzcyI6ImZhYnJpcXVlIiwib" \
+                "mFtZSI6InN0aWxsX2RvZyJ9.pmVA7XAuDjqECNdK-Xia3IvtMS8MKI1BDkjcaGWFhOU"
+
 
 class ClientViewSet(viewsets.ModelViewSet):
     """
@@ -40,9 +44,6 @@ class MessageViewSet(viewsets.ModelViewSet):
         """
         messages = Message.objects.filter(sending_status=False).all()
         number_of_sending_msg = 0
-        URL = "https://probe.fbrq.cloud/v1/send/"
-        TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIzNjc3MDksImlzcyI6ImZhYnJpcXVlIiwib" \
-                "mFtZSI6InN0aWxsX2RvZyJ9.pmVA7XAuDjqECNdK-Xia3IvtMS8MKI1BDkjcaGWFhOU"
 
         for message in messages:
             timezone = pytz.timezone(message.client.timezone)
