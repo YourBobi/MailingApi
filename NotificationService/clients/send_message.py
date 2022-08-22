@@ -2,7 +2,7 @@ import requests
 from .models import Message
 
 
-def send_message(data, url, token):
+def send_message(data: dict, url: str, token: str):
     print(url)
     header = {
         'Authorization': f'Bearer {token}',
